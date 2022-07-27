@@ -17,12 +17,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16.x
-        cache: 'yarn'
+        registry-url: 'https://registry.npmjs.org'
     - name: Install package Manager
       run: yarn install
     - name: Publish to NPM 📦
       run: yarn publish
       env: 
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_KLTR_AUTOMATION_PLAYER_TEAM }}
-
-        
