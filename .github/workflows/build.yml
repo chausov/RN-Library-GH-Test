@@ -5,10 +5,10 @@ name: build CI
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ "main", "develop" ]
-  pull_request:
-    branches: [ "main", "develop" ]
+    push:
+      branches: [ "main", "develop" ]
+    pull_request:
+      branches: [ "main", "develop" ]
 
 jobs:
   build:
