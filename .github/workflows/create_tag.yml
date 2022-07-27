@@ -4,11 +4,11 @@
 name: create_tag CI
 
 on:
-  # workflow_dispatch:
-  #   inputs:
-  #     description: 'Enter Tag Version'
-  #     required: true
-  #     type: string
+  workflow_dispatch:
+    inputs:
+      description: 'Enter Tag Version'
+      required: true
+      type: string
   push:
     branches: [ "main", "develop" ]
     tags:
