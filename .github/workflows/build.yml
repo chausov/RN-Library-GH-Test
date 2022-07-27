@@ -4,12 +4,16 @@
 name: build CI
 
 on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main", "develop" ]
   workflow_dispatch:
-    push:
-      branches: [ "main", "develop" ]
-    pull_request:
-      branches: [ "main", "develop" ]
-
+    inputs:
+      release:
+        version:
+        required: true 
+  
 jobs:
   build:
 
