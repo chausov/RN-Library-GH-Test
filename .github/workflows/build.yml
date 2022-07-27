@@ -4,6 +4,11 @@
 name: build CI
 
 on:
+  workflow_dispatch:
+    inputs:
+      build_version:
+        reqired: true
+        type: string
   push:
     branches: [ "main", "develop" ]
   pull_request:
