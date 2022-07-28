@@ -42,6 +42,8 @@ jobs:
     - name: Android native build
       #working-directory: ./android
       #run: ./gradlew build --no-daemon
-      run: pwd
-    - run: ls -al
+      run: |
+        pwd
+        ls -al
+        cd ./android
       
