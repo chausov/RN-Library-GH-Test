@@ -8,6 +8,10 @@ on:
     branches: [ "main", "develop" ]
   pull_request:
     branches: [ "main", "develop" ]
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
   
 jobs:
   build:
@@ -36,5 +40,5 @@ jobs:
         distribution: 'adopt'
         cache: gradle
     - name: Android native build
-      working-directory: ../../android
+      working-directory: android
       run: ./gradlew build --no-daemon
