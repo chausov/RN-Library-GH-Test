@@ -4,8 +4,6 @@
 name: build CI
 
 on:
-  push:
-    branches: [ "main", "develop" ]
   pull_request:
     branches: [ "main", "develop" ]
 
@@ -16,7 +14,7 @@ concurrency:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     strategy:
       matrix:
@@ -45,5 +43,11 @@ jobs:
 
     - name: Android native build
       run: cd android && chmod +x ./gradlew && ./gradlew build --no-daemon
+
+    - name: iOS native build and updating CocoaPods repo
+      run: cd ios && pod repo update
+
+    - name: iOS Pod linting
+      run: cd ios && pod lib lint --fail-fast --verbose
       
       
