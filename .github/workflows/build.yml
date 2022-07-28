@@ -43,8 +43,8 @@ jobs:
       with: 
         arguments: build
     - name: Android native build
+      working-directory: ./android
       run: ./gradlew build --no-daemon
-        working-directory: ./android
       #run: |
       #  pwd
       #  ls -al
