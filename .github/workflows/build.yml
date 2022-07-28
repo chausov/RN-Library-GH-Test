@@ -41,7 +41,7 @@ jobs:
       with: 
         java-version: '11'
         distribution: 'adopt'
-        cache: gradle
+        cache: 'gradle'
 
     - name: Android native build
       run: cd android && chmod +x ./gradlew && ./gradlew build --no-daemon
