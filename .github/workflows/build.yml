@@ -28,3 +28,5 @@ jobs:
         cache: 'yarn'
     - name: Install package Manager
       run: yarn install
+    - name: Android native build
+      run: ./gradlew -p ../../android build
