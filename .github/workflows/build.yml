@@ -33,9 +33,7 @@ jobs:
       uses: actions/setup-java@v3
       with: 
         java-version: '11'
-        distribution: 'temurin'
+        distribution: 'adopt'
         cache: gradle
-    - name: Execture persmission for gradlew
-      run: chmod +x gradlew
     - name: Android native build
-      run: ./gradlew -p ../../android build
+      run: ./gradlew -p ../../android build --no-daemon
