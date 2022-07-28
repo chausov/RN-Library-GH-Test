@@ -40,5 +40,5 @@ jobs:
         distribution: 'adopt'
         cache: gradle
     - name: Android native build
-      working-directory: android
+      working-directory: ./android
       run: ./gradlew build --no-daemon
